@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="PlayMusic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VL-4y-FIU">
+                                <rect key="frame" x="0.0" y="94" width="428" height="728"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto play ligado" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-Zm-M4A">
+                                        <rect key="frame" x="20" y="703.66666666666663" width="388" height="14.333333333333371"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHi-YT-quC">
+                                        <rect key="frame" x="359" y="664.66666666666663" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="onClickSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="cG3-6h-yce"/>
+                                        </connections>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEE-mc-yYr">
+                                        <rect key="frame" x="179" y="591" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="u8D-id-nNv"/>
+                                            <constraint firstAttribute="width" constant="70" id="yAI-q0-Tv2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="playButtonIcon"/>
+                                        <connections>
+                                            <action selector="playOrPause" destination="BYZ-38-t0r" eventType="touchUpInside" id="cik-lq-ujf"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AYH-Af-quc">
+                                        <rect key="frame" x="195.66666666666666" y="542" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="MEE-mc-yYr" firstAttribute="centerX" secondItem="2VL-4y-FIU" secondAttribute="centerX" id="Izn-2y-Imt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ean-Zm-M4A" secondAttribute="trailing" constant="20" id="Jf5-IL-lgw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ean-Zm-M4A" secondAttribute="bottom" constant="10" id="RxF-64-QDp"/>
+                                    <constraint firstItem="aHi-YT-quC" firstAttribute="trailing" secondItem="Ean-Zm-M4A" secondAttribute="trailing" id="XIM-8C-Gyh"/>
+                                    <constraint firstItem="MEE-mc-yYr" firstAttribute="top" secondItem="AYH-Af-quc" secondAttribute="bottom" constant="12" id="Yd6-aP-gof"/>
+                                    <constraint firstItem="Ean-Zm-M4A" firstAttribute="top" secondItem="aHi-YT-quC" secondAttribute="bottom" constant="8" symbolic="YES" id="atb-ao-Tqq"/>
+                                    <constraint firstItem="AYH-Af-quc" firstAttribute="centerX" secondItem="MEE-mc-yYr" secondAttribute="centerX" id="eLm-Dn-oC0"/>
+                                    <constraint firstItem="Ean-Zm-M4A" firstAttribute="leading" secondItem="2VL-4y-FIU" secondAttribute="leading" constant="20" symbolic="YES" id="fnq-sO-OHH"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="radioColonia" translatesAutoresizingMaskIntoConstraints="NO" id="2qH-5s-OCI">
+                                <rect key="frame" x="60" y="64" width="308" height="542"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cBJ-mW-mZt">
+                                <rect key="frame" x="15" y="842" width="398" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjK-r4-BMA" userLabel="instagramButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="112.66666666666667" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="1161953_instagram_icon">
+                                            <color key="titleColor" systemColor="linkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openInstagram" destination="BYZ-38-t0r" eventType="touchUpInside" id="8NV-TR-JZd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvb-Q7-TGu" userLabel="phoneButton">
+                                        <rect key="frame" x="142.66666666666666" y="0.0" width="112.66666666666666" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="8666632_phone_icon">
+                                            <color key="titleColor" systemColor="linkColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="makeCall" destination="BYZ-38-t0r" eventType="touchUpInside" id="sxb-gw-tQs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iry-4Z-P2b" userLabel="facebookButton">
+                                        <rect key="frame" x="285.33333333333331" y="0.0" width="112.66666666666669" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="216078_facebook_social_icon">
+                                            <color key="titleColor" systemColor="linkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openFacebook" destination="BYZ-38-t0r" eventType="touchUpInside" id="ImI-bC-gIB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mVj-60-Inh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cBJ-mW-mZt" firstAttribute="top" secondItem="2VL-4y-FIU" secondAttribute="bottom" constant="20" id="4Gm-Uj-jNF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2VL-4y-FIU" secondAttribute="trailing" id="6gd-lU-7Dz"/>
+                            <constraint firstItem="cBJ-mW-mZt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6tk-Z2-2Dl"/>
+                            <constraint firstItem="2VL-4y-FIU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Eab-c8-ti6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2qH-5s-OCI" secondAttribute="trailing" constant="60" id="HNC-rw-2a5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cBJ-mW-mZt" secondAttribute="trailing" constant="15" id="OAq-T9-0b4"/>
+                            <constraint firstItem="AYH-Af-quc" firstAttribute="top" secondItem="2qH-5s-OCI" secondAttribute="bottom" constant="30" id="Si5-Aj-zih"/>
+                            <constraint firstItem="2qH-5s-OCI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="Vfj-nT-kAe"/>
+                            <constraint firstItem="cBJ-mW-mZt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="XKt-fD-2jU"/>
+                            <constraint firstItem="2VL-4y-FIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bkP-Tj-ddC"/>
+                            <constraint firstItem="2qH-5s-OCI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kJS-f6-Dwg"/>
+                            <constraint firstItem="cBJ-mW-mZt" firstAttribute="top" secondItem="MEE-mc-yYr" secondAttribute="bottom" constant="87" id="vJN-v1-rd8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="AYH-Af-quc" id="JZz-ss-qth"/>
+                        <outlet property="autoPlayText" destination="Ean-Zm-M4A" id="mZ6-5u-eQ9"/>
+                        <outlet property="facebookButton" destination="iry-4Z-P2b" id="bfz-To-o3H"/>
+                        <outlet property="instagramButton" destination="BjK-r4-BMA" id="LU8-uq-ksd"/>
+                        <outlet property="optionSwitch" destination="aHi-YT-quC" id="2Uz-OA-uoE"/>
+                        <outlet property="phoneButton" destination="Cvb-Q7-TGu" id="e11-i0-NeC"/>
+                        <outlet property="playOrPauseButton" destination="MEE-mc-yYr" id="QFn-Qh-ZXC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231.8840579710145" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1161953_instagram_icon" width="128" height="128"/>
+        <image name="216078_facebook_social_icon" width="128" height="128"/>
+        <image name="8666632_phone_icon" width="128" height="128"/>
+        <image name="playButtonIcon" width="4096" height="4096"/>
+        <image name="radioColonia" width="600" height="601"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
