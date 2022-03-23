@@ -57,12 +57,9 @@ class PlayerViewController: UIViewController, MFMailComposeViewControllerDelegat
             if isPlaying {
                 
                 self.playOrPauseButton.setImage(self.pauseImage, for: .normal)
-                
-            
             } else {
                 
                 self.playOrPauseButton.setImage(self.playImage, for: .normal)
-                
             }
         }
         
@@ -71,12 +68,10 @@ class PlayerViewController: UIViewController, MFMailComposeViewControllerDelegat
             if isBuffering {
                 print("is buffering")
                 self.activityIndicator.startAnimating()
-
                 
             } else {
                 print("stop buffering")
                 self.activityIndicator.stopAnimating()
-                
             }
         }
     }
@@ -87,8 +82,6 @@ class PlayerViewController: UIViewController, MFMailComposeViewControllerDelegat
 extension PlayerViewController {
 
     @IBAction func playOrPause() {
-        
-       
         player.togglePlayOrPause()
     }
 }
@@ -111,7 +104,6 @@ extension PlayerViewController {
             
             UIApplication.shared.open(instagramPage! as URL, options: [:], completionHandler: nil)
             
-            
         } else {
           
             UIApplication.shared.open(NSURL(string: "http://instagram.com/")! as URL)
@@ -126,7 +118,7 @@ extension PlayerViewController {
             UIApplication.shared.open(NSURL(string: "https://www.facebook.com/coloniafm/")! as URL)
         }
     }
-    
+
 //    @IBAction func sendEmail() {
 //        if !MFMailComposeViewController.canSendMail() {
 //            print("mail services are not available")
@@ -147,8 +139,6 @@ extension PlayerViewController {
 //        controller.dismiss(animated: true, completion: nil)
 //    }
     
-    
- 
     @IBAction func onClickSwitch(_ sender: UISwitch) {
         
         if sender.isOn == false {
@@ -159,6 +149,4 @@ extension PlayerViewController {
             autoPlayText.text = "Auto play ligado"
         }
     }
-    
-   
 }
